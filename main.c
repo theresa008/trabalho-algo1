@@ -65,7 +65,7 @@ int main(){
            if (total == 0){
               printf("\nNenhum produto cadastrado para atualizar.\n");
            }else{
-                
+
             //    atualizarProduto(produtos, total);
            }
            break;
@@ -83,7 +83,24 @@ int main(){
 
 produto cadastrarProduto() {
     produto p;
+
+
+    printf("\n--- CADASTRO DO PRODUTO ---\n");
+
+    printf("digite o nome do produto: ");
     scanf("%s", p.nome);
+
+    printf("digite o preco do produto: ");
+    scanf("%f", &p.preco);
+
+    printf("digite a quantidade em estoque: ");
+    scanf("%d", &p.quantidade);
+
+    printf("digite o tamanho do produto: ");
+    scanf("%d", &p.tamanho);
+
+    printf("digite o codigo do produto: ");
+    scanf("%d", &p.codigo);
 
     return p;
 }

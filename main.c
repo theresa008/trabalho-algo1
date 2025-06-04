@@ -11,10 +11,10 @@ typedef struct {
 } produto;
 
 produto cadastrarProduto();
-void  exibirProduto(produto p);
-void  removerProduto(produto produtos[], int *total);
-void atualizarProduto(produto produtos[], int total);
-void listarProdutos(produto produtos[], int total);
+// void  exibirProduto(produto p);
+// void  removerProduto(produto produtos[], int *total);
+// void atualizarProduto(produto produtos[], int total);
+// void listarProdutos(produto produtos[], int total);
 
 int main(){
     produto produtos[100];
@@ -37,7 +37,8 @@ int main(){
         switch (opcao) {
         case 1: 
             produtos[total] = cadastrarProduto();
-            exibirProduto(produtos[total]);
+            printf("%s", produtos[total].nome);
+            // exibirProduto(produtos[total]);
 
             printf("\nConfirmar cadastro? (S/N)");
             scanf("%c", &confirmar);
@@ -51,20 +52,21 @@ int main(){
             }
             break;
        case 2:
-             listarProdutos(produtos, total);
+            //  listarProdutos(produtos, total);
              break;
         case 3: 
             if (total ==0 ) {
                 printf("\nNenhum produto cadastrado para remover.\n");
             }else{
-                removerProduto(produtos, &total);
+                // removerProduto(produtos, &total);
             }
             break;
         case 4:
            if (total == 0){
               printf("\nNenhum produto cadastrado para atualizar.\n");
            }else{
-               atualizarProduto(produtos, total);
+                
+            //    atualizarProduto(produtos, total);
            }
            break;
       case 5:
@@ -77,4 +79,11 @@ int main(){
         }
     } while (opcao != 5);
     
+}
+
+produto cadastrarProduto() {
+    produto p;
+    scanf("%s", p.nome);
+
+    return p;
 }
